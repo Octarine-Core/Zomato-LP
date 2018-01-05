@@ -30,4 +30,6 @@ info introduzirInfo();
 
 int mudarPass(char* nome, char* pass, char* novaPass);
 
+int usrMenu();
+
 #endif

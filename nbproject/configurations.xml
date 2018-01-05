@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>LP_Leitura.h</itemPath>
+      <itemPath>LP_Utils.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>LP_Leitura.c</itemPath>
+      <itemPath>LP_Utils.c</itemPath>
+      <itemPath>Zomato.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="Zomato" displayName="Zomato" projectFiles="true">
+      <logicalFolder name="dist" displayName="dist" projectFiles="true">
+        <logicalFolder name="Debug" displayName="Debug" projectFiles="true">
+          <logicalFolder name="Cygwin-Windows"
+                         displayName="Cygwin-Windows"
+                         projectFiles="true">
+            <itemPath>dist/Debug/Cygwin-Windows/temaslp.exe</itemPath>
+            <itemPath>dist/Debug/Cygwin-Windows/zomato.exe</itemPath>
+          </logicalFolder>
+          <logicalFolder name="Cygwin_1-Windows"
+                         displayName="Cygwin_1-Windows"
+                         projectFiles="true">
+            <itemPath>dist/Debug/Cygwin_1-Windows/zomato.exe</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="utilizadores"
+                     displayName="utilizadores"
+                     projectFiles="true">
+        <itemPath>utilizadores/Martim.txt</itemPath>
+        <itemPath>utilizadores/Memes.txt</itemPath>
+        <itemPath>utilizadores/Toni.txt</itemPath>
+        <itemPath>utilizadores/josefine.txt</itemPath>
+        <itemPath>utilizadores/lel.txt</itemPath>
+      </logicalFolder>
+      <itemPath>.dep.inc</itemPath>
+      <itemPath>Makefile</itemPath>
+      <itemPath>_dep.inc</itemPath>
+      <itemPath>sisutil.c</itemPath>
+      <itemPath>sisutil.h</itemPath>
+      <itemPath>temaslp.exe.stackdump</itemPath>
+      <itemPath>zomato.exe.stackdump</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>`pkg-config --libs libcurl`</linkerOptionItem>
+          </linkerLibItems>
+          <commandLine>-lcurl</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path=".dep.inc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LP_Leitura.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LP_Leitura.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LP_Utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LP_Utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Zomato.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="_dep.inc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dist/Debug/Cygwin-Windows/temaslp.exe"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="dist/Debug/Cygwin-Windows/zomato.exe"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="dist/Debug/Cygwin_1-Windows/zomato.exe"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sisutil.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sisutil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="temaslp.exe.stackdump" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/Martim.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/Memes.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/Toni.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/josefine.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/lel.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="zomato.exe.stackdump" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path=".dep.inc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LP_Leitura.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LP_Leitura.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LP_Utils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="LP_Utils.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Zomato.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="_dep.inc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dist/Debug/Cygwin-Windows/temaslp.exe"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="dist/Debug/Cygwin-Windows/zomato.exe"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="dist/Debug/Cygwin_1-Windows/zomato.exe"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sisutil.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="sisutil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="temaslp.exe.stackdump" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/Martim.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/Memes.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/Toni.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/josefine.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="utilizadores/lel.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="zomato.exe.stackdump" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

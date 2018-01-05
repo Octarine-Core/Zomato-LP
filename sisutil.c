@@ -3,6 +3,7 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "sisutil.h"
+#include "Zomato.h"
 #define PATH "./utilizadores/"
 #define URL "http://ip-api.com/line"
 
@@ -310,40 +311,26 @@ info introduzirInfo(){
 
     return dadosTemp;
 }
-int main(){
+int usrMenu(){
     /* Menu de teste das funcionalidades
      * IMPORTANTE: Este menu apresenta todas as informações, independemente do Login. Um menu mais
      * seguro deverá ser repensado
      */
-
+    int buff;
     char opc;
     char *nome = malloc(32);
-
     char *pass = malloc(32);
-
     char *novaPass = malloc(32);
-
-    info usr1 = {
-
-    .Pais = "Portugal",
-    .Regiao = "Regiao",
-    .Cidade = "Cidade",
-    .Postal = "4442-324",
-    .Morada = "Rua aleatoria, 69, Pais de teste, Marte"
-
-    };
-    
-    autoLoc("Memes", "Memes");
     do{
         do{
             printf(
-                    "A- Ver se existe usr\n"
-                    "B- Criar Conta\n"
-                    "C- Login\n"
+                    "A- Criar Conta automaticament (acesso à internet necessário)\n"
+                    "B- Criar Conta manualmente\n"
+                    "C- Pesquisa de restaurantes\n"
                     "D- Apagar Conta\n"
-                    "E- Testar funcionalidades de localização\n"
+                    "E- Consultar informações da conta\n"
                     "F- Mudar uma palavra-passe\n"
-                    "Q- Sair\n");
+                    "Q- Sair do sistema de utilizadores\n");
 
             scanf(" %c", &opc);
             
@@ -353,12 +340,25 @@ int main(){
 
                 printf("Meter nome...\n");
                 scanf("%s", nome);
-                if(usrExiste(nome))
-                    printf("O usr existe\n");
                 
-                else
-                    printf("O usr não existe\n");
+                printf("Meter password para a conta... \n");
+                scanf("%s", pass);
                 
+                printf("\n\n\n\n");
+                
+                
+                if(usrExiste(nome) != 1){
+                    
+                    autoLoc(nome, pass);
+                    printf("Conta criada automaticamente para o utilizador %s, com"
+                            "password %s\n", nome, pass);
+                    
+                } 
+                else{
+                    printf("O usr já existe\n");
+                    
+                }
+                printf("\n\n\n\n");
                 break;
             case 'B':
                 printf("Meter nome...\n");
@@ -371,6 +371,8 @@ int main(){
                     printf("Conta criada com usr %s e pass %s\n", nome, pass);
                 else
                     printf("Conta já existe\n");
+                
+                printf("\n\n\n\n");
                 break;
             case 'C':
                 printf("Meter nome...\n");
@@ -378,8 +380,11 @@ int main(){
 
                 printf("Meter pass...\n");
                 scanf("%s", pass);
-                if(login(nome, pass) == 1)
+                if(login(nome, pass) == 1){
                     printf("Login bem-sucedido!\n");
+                    
+                    
+                }
                 else if(login(nome, pass) == 0)
                     printf("Palavra-chave Errada\n");
                 else if(login(nome, pass) == -1)
@@ -388,6 +393,8 @@ int main(){
                     printf("Erro a ler ficheiro\n");
                 else if(login(nome, pass) == -3)
                     printf("Utilizador não existe\n");
+                
+                printf("\n\n\n\n");
                 break;
             case 'D':
                 printf("Meter nome\n");
@@ -405,25 +412,42 @@ int main(){
                 else{
                     printf("Erro!\n");
                 }
+                printf("\n\n\n\n");
                 break;
 
             case 'E' :
+                printf("Fazer Login\n");
                 printf("Meter nome\n");
                 scanf("%s", nome);
-
-                printf("%s", lerLoc(nome, 'P'));
-                printf("%s", lerLoc(nome, 'R'));
-                printf("%s", lerLoc(nome, 'C'));
-                printf("%s", lerLoc(nome, 'O'));
-                printf("%s\n", lerLoc(nome, 'M'));
+                    
+                printf("Introduzir Password\n");
+                scanf("%s", pass);
+                    
+                if(login(nome, pass) == 1){
+                    printf("\n\n");
+                    printf("%s", lerLoc(nome, 'P'));
+                    printf("%s", lerLoc(nome, 'R'));
+                    printf("%s", lerLoc(nome, 'C'));
+                    printf("%s", lerLoc(nome, 'O'));
+                    printf("%s\n\n", lerLoc(nome, 'M'));
+                    printf("Introduza qualquer numero para continuar..");
+                    scanf("%d", &buff);
+                }
+                else{
+                    printf("Nome ou password incorreto, tente novamente...\n");
+                }
+                printf("\n\n\n\n");
                 break;
 
             case 'F':
+                
+                printf("Fazer Login...\n");
+                        
                 printf("Meter nome\n");
-                scanf("%s", nome);
+                scanf(" %s", nome);
 
                 printf("Meter pass\n");
-                scanf("%s", pass);
+                scanf(" %s", pass);
 
                 if(login(nome, pass)){
                     printf("Meter nova pass\n");
@@ -433,6 +457,7 @@ int main(){
                 else{
                     printf("Login errado!\n");
                 }
+                printf("\n\n\n\n");
                 break;
         }
     }while(opc != 'Q');
