@@ -1,0 +1,16 @@
+teste
+success
+Portugal
+PT
+13
+Porto
+Felgueiras
+4610-000
+41.3681
+-8.194
+Europe/Lisbon
+Meo - Servicos De Comunicacoes E Multimedia, S.A.
+PT Comunicacoes
+AS3243 Servicos De Comunicacoes E Multimedia S.A.
+188.250.213.106
+0

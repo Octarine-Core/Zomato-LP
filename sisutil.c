@@ -3,7 +3,6 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "sisutil.h"
-#include "Zomato.h"
 #define PATH "./utilizadores/"
 #define URL "http://ip-api.com/line"
 
@@ -311,11 +310,8 @@ info introduzirInfo(){
 
     return dadosTemp;
 }
-int usrMenu(){
-    /* Menu de teste das funcionalidades
-     * IMPORTANTE: Este menu apresenta todas as informações, independemente do Login. Um menu mais
-     * seguro deverá ser repensado
-     */
+char* usrMenu(){
+    
     int buff;
     char opc;
     char *nome = malloc(32);
@@ -338,10 +334,10 @@ int usrMenu(){
         switch(opc){
             case 'A':
 
-                printf("Meter nome...\n");
+                printf("Introduzir nome...\n");
                 scanf("%s", nome);
                 
-                printf("Meter password para a conta... \n");
+                printf("Introduzir password para a conta... \n");
                 scanf("%s", pass);
                 
                 printf("\n\n\n\n");
@@ -351,8 +347,7 @@ int usrMenu(){
                     
                     autoLoc(nome, pass);
                     printf("Conta criada automaticamente para o utilizador %s, com"
-                            "password %s\n", nome, pass);
-                    
+                            "password %s\n", nome, pass);                    
                 } 
                 else{
                     printf("O usr já existe\n");
@@ -361,10 +356,10 @@ int usrMenu(){
                 printf("\n\n\n\n");
                 break;
             case 'B':
-                printf("Meter nome...\n");
+                printf("Introduzir nome...\n");
 
                 scanf("%s", nome);
-                printf("Meter pass...\n");
+                printf("Introduzir pass...\n");
 
                 scanf("%s", pass);
                 if(manLoc(nome, pass, introduzirInfo()))
@@ -382,8 +377,7 @@ int usrMenu(){
                 scanf("%s", pass);
                 if(login(nome, pass) == 1){
                     printf("Login bem-sucedido!\n");
-                    
-                    
+                    return lerLoc(nome, 'C');
                 }
                 else if(login(nome, pass) == 0)
                     printf("Palavra-chave Errada\n");
@@ -417,7 +411,7 @@ int usrMenu(){
 
             case 'E' :
                 printf("Fazer Login\n");
-                printf("Meter nome\n");
+                printf("Introduzir nome\n");
                 scanf("%s", nome);
                     
                 printf("Introduzir Password\n");
@@ -443,14 +437,14 @@ int usrMenu(){
                 
                 printf("Fazer Login...\n");
                         
-                printf("Meter nome\n");
+                printf("Introduzir nome\n");
                 scanf(" %s", nome);
 
-                printf("Meter pass\n");
+                printf("Introduzir pass\n");
                 scanf(" %s", pass);
 
                 if(login(nome, pass)){
-                    printf("Meter nova pass\n");
+                    printf("Introduzir nova pass\n");
                     scanf("%s", novaPass);
                     mudarPass(nome, pass, novaPass);
                 }
@@ -461,5 +455,5 @@ int usrMenu(){
                 break;
         }
     }while(opc != 'Q');
-    return 0;
+    return "0";
 }

@@ -1,14 +1,11 @@
 Toni
 
+Portugal
 
 
-
-
-Regiao
-
-Cidade
-
-Postal
+Porto
+Felgueiras
+4432-234
 
 
 
@@ -16,5 +13,4 @@ Postal
 
 
 
-
-rua nao sei que 23, alfena
+Rua qualquer, 32, felgueiras

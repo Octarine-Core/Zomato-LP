@@ -669,7 +669,14 @@ automática ou manual.*/
                     break;
             // sistema de utilizadores
             case 2:
-                usrMenu();
+                    //Se o utilizador fez login bem-sucedido, e tem a cidade
+                strcpy(localizacao, usrMenu());
+                strtok(localizacao, "\n"); //remove o newline
+                if(strcmp(localizacao, "0") != 0){
+                    printf("À procura de restaurantes em %s... \n", localizacao);
+                    obter_entitys(localizacao, entity_type, entity_id);
+                    pesquisa_local(entity_id, entity_type);
+                }
                 break;
                 
         }
