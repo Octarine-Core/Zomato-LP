@@ -5,7 +5,7 @@ Portugal
 
 Norte
 Porto
-23342
+4442-234
 
 
 
@@ -13,4 +13,4 @@ Porto
 
 
 
-rua bla bla 32
+Rua qualquer, 32, Porto

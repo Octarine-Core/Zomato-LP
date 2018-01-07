@@ -20,7 +20,7 @@
      * @brief Mensagem a mostrar ao utilizador caso o número inteiro introduzido 
      *  nao respeite o limite inicial e final definido.
      */
-    #define MSG_LEITURA_INT_GAMA_INVALIDA "O numero que introduziu e invalido. Introduza um valor entre %ld e %ld.\n"
+    #define MSG_LEITURA_INT_GAMA_INVALIDA "O número que introduziu é invalido. Introduza um valor entre %ld e %ld.\n"
     /**
      * @brief Mensagem a informar o utilizador caso o número real introduzido 
      *  nao respeite o limite inicial e final definido.
